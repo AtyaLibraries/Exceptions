@@ -6,6 +6,7 @@
     <AssemblyName>Atya.Errors.Exceptions</AssemblyName>
     <RootNamespace>Atya.Errors.Exceptions</RootNamespace>
     <IsPackable>true</IsPackable>
+    <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion>
     <Authors>Arsen Asulyan</Authors>
     <Copyright>Copyright (c) 2026 Arsen Asulyan</Copyright>
     <Description>Exception types and helpers for Atya error handling packages.</Description>
