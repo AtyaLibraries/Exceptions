@@ -7,8 +7,14 @@ using Atya.Errors.Exceptions.Models;
 
 namespace Exceptions.Samples.Console;
 
+/// <summary>
+/// Runs the Atya.Errors.Exceptions console sample.
+/// </summary>
 public static class Program
 {
+    /// <summary>
+    /// Demonstrates constructing and reading Atya exception metadata.
+    /// </summary>
     public static void Main()
     {
         IReadOnlyDictionary<string, object?> metadata = new Dictionary<string, object?>

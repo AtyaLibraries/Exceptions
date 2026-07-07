@@ -9,8 +9,15 @@ using BenchmarkDotNet.Running;
 
 namespace Exceptions.Benchmarks;
 
+/// <summary>
+/// Runs the Atya.Errors.Exceptions benchmark suite.
+/// </summary>
 public static class Program
 {
+    /// <summary>
+    /// Executes the benchmark suite.
+    /// </summary>
+    /// <param name="args">Command-line arguments passed to BenchmarkDotNet.</param>
     public static void Main(string[] args)
     {
         _ = args;
@@ -18,6 +25,9 @@ public static class Program
     }
 }
 
+/// <summary>
+/// Benchmarks construction of common Atya exception types.
+/// </summary>
 [MemoryDiagnoser]
 public class ExceptionConstructionBenchmarks
 {
@@ -34,12 +44,20 @@ public class ExceptionConstructionBenchmarks
         new("Age", "Age must be greater than zero.", "validation.range", 0)
     ];
 
+    /// <summary>
+    /// Creates a not-found exception.
+    /// </summary>
+    /// <returns>The created exception.</returns>
     [Benchmark]
     public static NotFoundException CreateNotFoundException()
     {
         return new NotFoundException("Customer was not found.", "customer.not_found");
     }
 
+    /// <summary>
+    /// Creates an infrastructure exception with metadata.
+    /// </summary>
+    /// <returns>The created exception.</returns>
     [Benchmark]
     public static InfrastructureException CreateInfrastructureExceptionWithMetadata()
     {
@@ -50,6 +68,10 @@ public class ExceptionConstructionBenchmarks
             Metadata);
     }
 
+    /// <summary>
+    /// Creates a validation exception with validation items.
+    /// </summary>
+    /// <returns>The created exception.</returns>
     [Benchmark]
     public static ValidationException CreateValidationException()
     {
